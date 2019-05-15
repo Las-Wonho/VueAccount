@@ -97,13 +97,13 @@ export default {
         //   to: '/REST'
         // },
         {
-          icon: 'face',
-          title: 'login',
+          icon: 'person',
+          title: '회원 참가',
           to: '/login'
         },
         {
-          icon: 'face',
-          title: 'signup',
+          icon: 'person_add',
+          title: '회원 생성',
           to: '/signup'
         }
       ],

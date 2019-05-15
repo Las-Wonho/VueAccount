@@ -33,6 +33,12 @@
              color="primary"
              @click="register()"
             >회원가입 하고 싶냐?</v-btn>
+            <v-btn
+             large
+             block
+             color="primary"
+             @click="gotologin()"
+            >이미 계정이 있으면 로그인이나 하지?</v-btn>
           </div>
         </v-card>
       </v-flex>
@@ -98,6 +104,9 @@ export default {
     pop (msg) {
       this.snackbar = true
       this.sbMsg = msg
+    },
+    gotologin(){
+      location.href = 'http://localhost:8080/login'
     }
   }
 }

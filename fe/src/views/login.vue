@@ -26,6 +26,12 @@
              color="primary"
              @click="login()"
             >로그인</v-btn>
+            <v-btn
+             large
+             block
+             color="primary"
+             @click="gotoRegister()"
+            >야레야레.. 설마 계정도 없으면서 로그인하려는건 아니지?</v-btn>
           </div>
         </v-card>
       </v-flex>
@@ -75,6 +81,9 @@ export default {
     pop (msg) {
       this.snackbar = true
       this.sbMsg = msg
+    },
+    gotoRegister(){
+      location.href = 'http://localhost:8080/signup'
     }
   }
 }
