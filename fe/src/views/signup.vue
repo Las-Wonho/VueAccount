@@ -78,10 +78,10 @@ export default {
   },
   methods: {
     register() {
-    if(CheckPW(this.password)){
-    this.pop("비밀번호 다시 입력해라;;")
-    }
-      axios.post('http://localhost:3000/api/register', {
+      if(this.CheckPW(this.password) == true){
+        this.pop("감히 비밀번호에 특수문자를 넣는겁니까 닝겐??")
+      }else{
+        axios.post('http://localhost:3000/api/register', {
         id: this.email,
         pw: this.password,
         sex: this.userSex,
@@ -103,6 +103,7 @@ export default {
           console.error(e.message)
           this.pop('e.message')
         })
+      }
     },
     pop (msg) {
       this.snackbar = true
@@ -110,13 +111,11 @@ export default {
     },
     gotologin(){
       location.href = 'http://localhost:8080/login'
+    },
+    CheckPW(str){
+      let reg = /[~!@#$%<>^&*]/;
+      return reg.test(str);
     }
   }
 }
-function CheckPW(str){
-   var reg1 = /^[a-z0-9]{7,14}$/;
-   var reg2 = /[a-z]/g;
-   var reg3 = /[0-9]/g;
-   return(reg1.test(str) &&  reg2.test(str) && reg3.test(str));
-};
 </script>
