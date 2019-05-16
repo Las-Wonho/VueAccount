@@ -78,6 +78,9 @@ export default {
   },
   methods: {
     register() {
+      if(ChecK_BlanK([this.password,this.name,this.email])){
+      this.pop("전부 채웃[요")
+      }
       if(this.CheckPW(this.password) == true){
         this.pop("감히 비밀번호에 특수문자를 넣는겁니까 닝겐??")
       }else{
@@ -115,6 +118,14 @@ export default {
     CheckPW(str){
       let reg = /[~!@#$%<>^&*]/;
       return reg.test(str);
+    },
+    ChecK_BlanK(lists){
+      for(var i=0; i<lists.length; i++){
+        if(lists[i]==""){
+          return false
+        }
+      }
+      return true
     }
   }
 }
