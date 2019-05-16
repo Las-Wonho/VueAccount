@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     register() {
-      if(ChecK_BlanK([this.password,this.name,this.email])){
+      if(!this.ChecK_BlanK([this.password,this.name,this.email])){
       this.pop("전부 채웃[요")
       }
       if(this.CheckPW(this.password) == true){
